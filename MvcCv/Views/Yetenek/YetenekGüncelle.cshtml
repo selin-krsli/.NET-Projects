@@ -1,0 +1,25 @@
+﻿@using MvcCv.Models.Entity
+@model TBL_SKILLS
+@{
+    ViewBag.Title = "YetenekGüncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Yetenek Düzenleme Sayfası</h4>
+<br />
+
+<form method="post">
+    @Html.Label("Yetenek ID")
+    @Html.TextBoxFor(s => s.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek Açıklaması")
+    @Html.TextBoxFor(s => s.Yetenek, new { @class = "form-control" })
+    <br />
+    @Html.Label("Derece")
+    @Html.TextBoxFor(s => s.Oran, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
+
