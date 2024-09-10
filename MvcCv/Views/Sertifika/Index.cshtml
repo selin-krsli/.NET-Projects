@@ -1,0 +1,74 @@
+﻿@using MvcCv.Models.Entity
+@model List<TBL_AWARDS>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{ string boxColor = "";}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                                <div class="tab-pane" id="timeline">
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                        @foreach (var item in Model)
+                                        {
+                                            DateTime parsedDate;
+                                            if(DateTime.TryParse(item.Tarih, out parsedDate))
+                                            {
+                                                int year = parsedDate.Year;
+                                                if(year%2==0)
+                                                {
+                                                    boxColor = "btn btn-success";
+                                                }
+                                                else
+                                                {
+                                                    boxColor = "btn btn-warning";
+                                                }
+                                            }
+                                            <!-- timeline time label -->
+                                            <div class="time-label">
+                                                <a href="/Sertifika/SertifikaGüncelle/@item.ID" class="@boxColor">
+                                                    <span class="@boxColor">
+                                                        @item.Tarih
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <!-- /.timeline-label -->
+                                            <!-- timeline item -->
+                                            <div>
+                                                <div class="timeline-item">
+                                                    <div class="timeline-body">
+                                                        @item.Aciklama
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        }
+
+                                    </div>
+                                    <a href="/Sertifika/SertifikaEkle/" class="btn btn-info">Yeni Sertifika Girişi</a>
+                                </div>
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+    </section>
+</body>
+</html>
+
