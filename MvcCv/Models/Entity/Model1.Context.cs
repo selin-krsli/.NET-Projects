@@ -33,5 +33,6 @@ namespace MvcCv.Models.Entity
         public virtual DbSet<TBL_EXPERIENCE> TBL_EXPERIENCE { get; set; }
         public virtual DbSet<TBL_INTERESTS> TBL_INTERESTS { get; set; }
         public virtual DbSet<TBL_SKILLS> TBL_SKILLS { get; set; }
+        public virtual DbSet<TBL_SOCIALMEDIA> TBL_SOCIALMEDIA { get; set; }
     }
 }

@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="CVDBModel.TBL_EXPERIENCE" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CVDBModel.TBL_INTERESTS" Width="1.5" PointX="0.625" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CVDBModel.TBL_SKILLS" Width="1.5" PointX="2.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CVDBModel.TBL_SOCIALMEDIA" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
