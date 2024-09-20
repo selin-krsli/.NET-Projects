@@ -11,7 +11,6 @@ namespace MvcCv.Controllers
     public class EgitimController : Controller
     {
         GenericRepository<TBL_EDUCATION> repo = new GenericRepository<TBL_EDUCATION>();
-        [Authorize]
         public ActionResult Index()
         {
             var values = repo.List();
