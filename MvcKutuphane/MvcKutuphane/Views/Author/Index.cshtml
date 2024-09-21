@@ -1,0 +1,30 @@
+﻿@model List<MvcKutuphane.Models.Entity.TBL_YAZAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Detay</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Detay</td>
+            <td><a href="/Author/DeleteAuthor/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Author/UpdateAuthor/@item.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Author/CreateAuthor/" class="btn btn-primary">Yeni Yazar Ekle</a>
+
