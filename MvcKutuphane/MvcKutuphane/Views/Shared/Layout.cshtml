@@ -2,16 +2,71 @@
 @{
     Layout = null;
 }
-
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body {font-family: "Lato", sans-serif;}
+
+.sidebar {
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+.sidebar a {
+  padding: 10px 14px 10px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #0094ff;
+}
+
+.main {
+  margin-left: 240px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+@@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+    </style>
 </head>
 <body>
-    <div> 
+
+    <div class="sidebar">
+        <a href="#"><i class="fa fa-fw fa-home"></i> Ana Sayfa</a>
+        <a href="/Category/Index/"><i class="fa fa-fw fa-list"></i> Kategoriler</a>
+        <a href="#"><i class="fa fa-fw fa-book"></i> Kitaplar</a>
+        <a href="#"><i class="fa fa-fw fa-pencil"></i> Yazarlar</a>
+        <a href="#"><i class="fa fa-fw fa-user"></i> Üyeler</a>
+        <a href="#"><i class="fa fa-fw fa-star"></i> Personeller</a>
+        <a href="#"><i class="fa fa-fw fa-arrow-right"></i> Ödünç Kitap Ver</a>
+        <a href="#"><i class="fa fa-fw fa-arrow-left"></i> Ödünç Kitap Al</a>
+        <a href="#"><i class="fa fa-fw fa-euro"></i> Kasa</a>
+        <a href="#"><i class="fa fa-fw fa-dashboard"></i> İşlemler</a>
+        <a href="#"><i class="fa fa-fw fa-cog"></i> Ayarlar</a>
+        <a href="#"><i class="fa fa-fw fa-info"></i> Yardım</a>
+        <a href="#"><i class="fa fa-fw fa-sign-out"></i> Çıkış</a>
     </div>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+
 </body>
-</html>
+</html> 
