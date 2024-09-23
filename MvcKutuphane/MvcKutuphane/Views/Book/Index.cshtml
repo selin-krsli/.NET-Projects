@@ -1,0 +1,41 @@
+﻿@model List<MvcKutuphane.Models.Entity.TBL_KITAP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Kitap Sayfası</h2>
+<div style="margin-bottom:15px;" margin-top:15px;>
+    <input type="text" class="form-control" placeholder="Aranacak kitabı giriniz.." />
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Yazarı</th>
+        <th>Kategorisi</th>
+        <th>Basım Yılı</th>
+        <th>Yayınevi</th>
+        <th>Sayfa</th>
+        <th>Durum</th>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Ad</td>
+            <td>@item.TBL_YAZAR.Ad  @item.TBL_YAZAR.Soyad</td>
+            <td>@item.TBL_KATEGORI.Ad</td>
+            <td>@item.BasımYılı</td>
+            <td>@item.YayınEvi</td>
+            <td>@item.Sayfa</td>
+            <td>@item.Durum</td>
+            <td><a href="/Book/DeleteBook/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Book/UpdateBook/@item.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Book/CreateBook/" class="btn btn-primary">Yeni Kitap Ekle</a>
+
