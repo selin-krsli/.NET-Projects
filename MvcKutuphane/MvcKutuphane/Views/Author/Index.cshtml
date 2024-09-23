@@ -21,7 +21,7 @@
             <td>@item.Ad</td>
             <td>@item.Soyad</td>
             <td>@item.Detay</td>
-            <td><a href="/Author/DeleteAuthor/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td>@Html.ActionLink("Delete", "DeleteAuthor", new { id = item.ID }, new {@class="btn btn-danger",onclick="return confirm('Silmek istiyor musunuz?')" }) </td>
             <td><a href="/Author/UpdateAuthor/@item.ID" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
