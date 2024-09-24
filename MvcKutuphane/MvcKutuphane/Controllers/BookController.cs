@@ -10,9 +10,15 @@ namespace MvcKutuphane.Controllers
     public class BookController : Controller
     {
         DBKUTUPHANEEntities dbKutuphane = new DBKUTUPHANEEntities();
-        public ActionResult Index()
+        public ActionResult Index(string searchingWord)
         {
             var values = dbKutuphane.TBL_KITAP.ToList();
+            if(!String.IsNullOrEmpty(searchingWord))
+            {
+                values = dbKutuphane.TBL_KITAP
+                        .Where(s=>s.Ad.Contains(searchingWord))
+                        .ToList();
+            }
             return View(values);
         }
         [HttpGet]
