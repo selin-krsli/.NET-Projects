@@ -15,8 +15,7 @@ namespace MvcKutuphane.Controllers
             var values = dbKutuphane.TBL_KITAP.ToList();
             if(!String.IsNullOrEmpty(searchingWord))
             {
-                values = dbKutuphane.TBL_KITAP
-                        .Where(s=>s.Ad.Contains(searchingWord))
+                values = values.Where(s=>s.Ad.ToLower().Contains(searchingWord))
                         .ToList();
             }
             return View(values);

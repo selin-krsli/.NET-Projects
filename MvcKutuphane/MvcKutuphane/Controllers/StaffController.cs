@@ -16,9 +16,16 @@ namespace MvcKutuphane.Controllers
             return View(values);
         }
         [HttpGet]
-        public ActionResult CreateStaff(int id)
+        public ActionResult CreateStaff()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult CreateStaff(TBL_PERSONEL parametre)
+        {
+            dbKutuphane.TBL_PERSONEL.Add(parametre);
+            dbKutuphane.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
