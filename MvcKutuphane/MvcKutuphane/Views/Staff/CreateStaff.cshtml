@@ -7,7 +7,8 @@
 <form class="form-group" method="post">
     <div style="margin-top:15px;">
         <label>Personel Adı</label>
-        <input type="text" class="form-control" name="Personel" />
+        @Html.TextBoxFor(s=>s.Personel, new {@class="form-control"})
+        @Html.ValidationMessageFor(s=>s.Personel, "", new {@style="color:Red"})
     </div>
     <div style="margin-top:15px;">
         <button class="btn btn-info" id="Btn1">Personel Ekle</button>
