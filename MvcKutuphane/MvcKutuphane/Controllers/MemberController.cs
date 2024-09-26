@@ -33,5 +33,36 @@ namespace MvcKutuphane.Controllers
             dbKutuphane.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult DeleteMember(int id)
+        {
+            var existingValue = dbKutuphane.TBL_UYELER.Find(id);
+            dbKutuphane.TBL_UYELER.Remove(existingValue);
+            dbKutuphane.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult UpdateMember(int id)
+        {
+            var existingValue = dbKutuphane.TBL_UYELER.Find(id);
+            return View(existingValue);
+        }
+        [HttpPost]
+        public ActionResult UpdateMember(TBL_UYELER parametre)
+        {
+            var existingValue = dbKutuphane.TBL_UYELER.Find(parametre.ID);
+            if(existingValue != null)
+            {
+                existingValue.Ad = parametre.Ad;
+                existingValue.Soyad = parametre.Soyad;
+                existingValue.Mail = parametre.Mail;
+                existingValue.KullaniciAdi = parametre.KullaniciAdi;
+                existingValue.Sifre = parametre.Sifre;
+                existingValue.Fotograf = parametre.Fotograf;
+                existingValue.Telefon = parametre.Telefon;
+                existingValue.Okul = parametre.Okul;
+                dbKutuphane.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

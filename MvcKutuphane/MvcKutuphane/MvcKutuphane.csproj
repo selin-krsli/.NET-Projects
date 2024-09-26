@@ -139,6 +139,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MovementController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -271,6 +272,9 @@
     <Content Include="Views\Staff\UpdateStaff.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
     <Content Include="Views\Member\CreateMember.cshtml" />
+    <Content Include="Views\Member\UpdateMember.cshtml" />
+    <Content Include="Views\Movement\OduncVer.cshtml" />
+    <Content Include="Views\Movement\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
