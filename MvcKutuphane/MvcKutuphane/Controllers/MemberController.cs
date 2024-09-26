@@ -12,7 +12,7 @@ namespace MvcKutuphane.Controllers
     public class MemberController : Controller
     {
         DBKUTUPHANEEntities dbKutuphane = new DBKUTUPHANEEntities();
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1)//sayfalama işleminin kaçtan başlayacağı anlamına geliyor.
         {
             var values = dbKutuphane.TBL_UYELER.ToList().ToPagedList(page, 3);
             return View(values);
