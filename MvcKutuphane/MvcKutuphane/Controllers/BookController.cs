@@ -10,12 +10,12 @@ namespace MvcKutuphane.Controllers
     public class BookController : Controller
     {
         DBKUTUPHANEEntities dbKutuphane = new DBKUTUPHANEEntities();
-        public ActionResult Index(string searchingWord)
+        public ActionResult Index(string p)
         {
             var values = dbKutuphane.TBL_KITAP.ToList();
-            if(!String.IsNullOrEmpty(searchingWord))
+            if(!String.IsNullOrEmpty(p))
             {
-                values = values.Where(s=>s.Ad.ToLower().Contains(searchingWord))
+                values = values.Where(s=>s.Ad.ToLower().Contains(p.ToLower()))
                         .ToList();
             }
             return View(values);
@@ -76,6 +76,7 @@ namespace MvcKutuphane.Controllers
                 existingBook.Ad = parametre.Ad;
                 existingBook.BasımYılı = parametre.BasımYılı;
                 existingBook.YayınEvi = parametre.YayınEvi;
+                existingBook.Durum = true;
                 existingBook.Sayfa = parametre.Sayfa;
                 var category = dbKutuphane.TBL_KATEGORI.Where(s=>s.ID==parametre.TBL_KATEGORI.ID).FirstOrDefault();
                 var author = dbKutuphane.TBL_YAZAR.Where(n=>n.ID==parametre.TBL_YAZAR.ID).FirstOrDefault();

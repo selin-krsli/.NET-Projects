@@ -8,13 +8,10 @@
 @using (Html.BeginForm("Index", "Book", FormMethod.Get))
 {
     <div style="margin-bottom:15px; margin-top:15px;">
-        <b>Aranacak Kitap Adını Giriniz: </b> @Html.TextBox("searchingWord", null, new {@class="form-control"})
+        <b>Aranacak Kitap Adını Giriniz: </b> @Html.TextBox("p", null, new {@class="form-control"})
         <input type="submit" value="Ara" class="btn btn-primary" style="margin-top:10px;" />
     </div>
 }
-<div style="margin-bottom:15px;" margin-top:15px;>
-    <input type="text" class="form-control" placeholder="Aranacak kitabı giriniz.." />
-</div>
 <table class="table table-bordered">
     <tr>
         <th>ID</th>

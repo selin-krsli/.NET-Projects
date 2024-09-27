@@ -27,5 +27,10 @@ namespace MvcKutuphane.Controllers
             dbKutuphane.SaveChanges();
             return RedirectToAction("OduncVer");
         }
+        public ActionResult RefundMovement(int id)
+        {
+            var value = dbKutuphane.TBL_HAREKET.Find(id);
+            return View(value);
+        }
     }
 }
