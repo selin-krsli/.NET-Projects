@@ -32,5 +32,13 @@ namespace MvcKutuphane.Controllers
             var value = dbKutuphane.TBL_HAREKET.Find(id);
             return View(value);
         }
+        public ActionResult UpdateRefund(TBL_HAREKET parametre)
+        {
+            var existingValue = dbKutuphane.TBL_HAREKET.Find(parametre.ID);
+            existingValue.UyeGetirTarih = parametre.UyeGetirTarih;
+            existingValue.IslemDurum = true;
+            dbKutuphane.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
