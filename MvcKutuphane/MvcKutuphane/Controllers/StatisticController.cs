@@ -12,5 +12,13 @@ namespace MvcKutuphane.Controllers
         {
             return View();
         }
+        public ActionResult Weather()
+        {
+            return View();
+        }
+        public ActionResult WeatherCard()
+        {
+            return View();
+        }
     }
 }
