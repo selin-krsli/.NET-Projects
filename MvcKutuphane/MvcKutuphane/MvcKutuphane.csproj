@@ -143,6 +143,7 @@
     <Compile Include="Controllers\ProcedureController.cs" />
     <Compile Include="Controllers\ShowcaseController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -413,6 +414,7 @@
     <Content Include="web\vendor\jquery\jquery.min.map" />
     <Content Include="web\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Showcase\Index.cshtml" />
+    <Content Include="Views\Statistic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

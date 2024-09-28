@@ -23,6 +23,10 @@ namespace MvcKutuphane.Controllers
         [HttpPost]
         public ActionResult CreateAuthor(TBL_YAZAR parametre)
         {
+            if(!ModelState.IsValid)
+            {
+                return View();
+            }
             dbKutuphane.TBL_YAZAR.Add(parametre);
             dbKutuphane.SaveChanges();
             return RedirectToAction("Index");
