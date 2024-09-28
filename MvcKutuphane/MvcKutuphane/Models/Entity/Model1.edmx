@@ -46,6 +46,16 @@
           <Property Name="UyeGetirTarih" Type="smalldatetime" />
           <Property Name="IslemDurum" Type="bit" />
         </EntityType>
+        <EntityType Name="TBL_ILETISIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="varchar" MaxLength="50" />
+          <Property Name="Mail" Type="varchar" MaxLength="50" />
+          <Property Name="Konu" Type="varchar" MaxLength="50" />
+          <Property Name="Mesaj" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TBL_KASA">
           <Key>
             <PropertyRef Name="ID" />
@@ -194,6 +204,7 @@
           <EntitySet Name="TBL_CEZALAR" EntityType="Self.TBL_CEZALAR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_HAKKIMIZDA" EntityType="Self.TBL_HAKKIMIZDA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_HAREKET" EntityType="Self.TBL_HAREKET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ILETISIM" EntityType="Self.TBL_ILETISIM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_KASA" EntityType="Self.TBL_KASA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_KATEGORI" EntityType="Self.TBL_KATEGORI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_KITAP" EntityType="Self.TBL_KITAP" Schema="dbo" store:Type="Tables" />
@@ -451,6 +462,7 @@
             <End Role="TBL_HAREKET" EntitySet="TBL_HAREKET" />
           </AssociationSet>
           <EntitySet Name="TBL_HAKKIMIZDA" EntityType="DBKUTUPHANEModel.TBL_HAKKIMIZDA" />
+          <EntitySet Name="TBL_ILETISIM" EntityType="DBKUTUPHANEModel.TBL_ILETISIM" />
         </EntityContainer>
         <Association Name="FK_TBL_HAREKET_TBL_PERSONEL">
           <End Type="DBKUTUPHANEModel.TBL_PERSONEL" Role="TBL_PERSONEL" Multiplicity="0..1" />
@@ -470,6 +482,16 @@
           </Key>
           <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBL_ILETISIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mesaj" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -583,6 +605,17 @@
             <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBL_HAKKIMIZDA">
               <MappingFragment StoreEntitySet="TBL_HAKKIMIZDA">
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ILETISIM">
+            <EntityTypeMapping TypeName="DBKUTUPHANEModel.TBL_ILETISIM">
+              <MappingFragment StoreEntitySet="TBL_ILETISIM">
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
