@@ -12,7 +12,7 @@ namespace MvcKutuphane.Controllers
         DBKUTUPHANEEntities dbKutuphane = new DBKUTUPHANEEntities();
         public ActionResult Index()
         {
-            var values = dbKutuphane.TBL_HAREKET.ToList();
+            var values = dbKutuphane.TBL_HAREKET.Where(s=>s.IslemDurum==false).ToList();
             return View(values);
         }
         [HttpGet]
