@@ -424,6 +424,7 @@
     <Content Include="Views\Statistic\Index.cshtml" />
     <Content Include="Views\Statistic\Weather.cshtml" />
     <Content Include="Views\Statistic\WeatherCard.cshtml" />
+    <Content Include="Views\Statistic\Galeri.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
