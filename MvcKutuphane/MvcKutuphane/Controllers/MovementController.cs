@@ -27,11 +27,14 @@ namespace MvcKutuphane.Controllers
             dbKutuphane.SaveChanges();
             return RedirectToAction("OduncVer");
         }
-        public ActionResult RefundMovement(TBL_HAREKET parametre)
+        public ActionResult RefundMovement(int id)
         {
-            var value = dbKutuphane.TBL_HAREKET.Find(parametre.ID);
-            DateTime deger1 = DateTime.Parse(parametre.IadeTarihi.ToString());
-            ViewBag.Deger1 = deger1;
+            var value = dbKutuphane.TBL_HAREKET.Find(id);
+
+            DateTime deger1 = DateTime.Parse(value.IadeTarihi.ToString());
+            DateTime deger2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan deger3 = deger2-deger1;
+            ViewBag.Deger1 = deger3.TotalDays;
             return View(value);
         }
         public ActionResult UpdateRefund(TBL_HAREKET parametre)
