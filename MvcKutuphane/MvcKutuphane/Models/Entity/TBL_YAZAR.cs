@@ -11,8 +11,7 @@ namespace MvcKutuphane.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TBL_YAZAR
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,11 +21,7 @@ namespace MvcKutuphane.Models.Entity
         }
     
         public int ID { get; set; }
-
-        [Required(ErrorMessage ="Yazar Adýný Boþ Geçemezsiniz!")]
         public string Ad { get; set; }
-
-        [StringLength(20, ErrorMessage ="20 Karakteri Geçemezsiniz!")]
         public string Soyad { get; set; }
         public string Detay { get; set; }
     

@@ -199,6 +199,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="EnAktifUye" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnBaşarılıPersonel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnÇokOkunanKitap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnFazlaKitapYazar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBKUTUPHANEModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_CEZALAR" EntityType="Self.TBL_CEZALAR" Schema="dbo" store:Type="Tables" />
@@ -463,6 +467,10 @@
           </AssociationSet>
           <EntitySet Name="TBL_HAKKIMIZDA" EntityType="DBKUTUPHANEModel.TBL_HAKKIMIZDA" />
           <EntitySet Name="TBL_ILETISIM" EntityType="DBKUTUPHANEModel.TBL_ILETISIM" />
+          <FunctionImport Name="EnFazlaKitapYazar" ReturnType="Collection(String)" />
+          <FunctionImport Name="EnAktifUye" ReturnType="Collection(String)" />
+          <FunctionImport Name="EnBaşarılıPersonel" ReturnType="Collection(String)" />
+          <FunctionImport Name="EnÇokOkunanKitap" ReturnType="Collection(String)" />
         </EntityContainer>
         <Association Name="FK_TBL_HAREKET_TBL_PERSONEL">
           <End Type="DBKUTUPHANEModel.TBL_PERSONEL" Role="TBL_PERSONEL" Multiplicity="0..1" />
@@ -620,6 +628,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="EnFazlaKitapYazar" FunctionName="DBKUTUPHANEModel.Store.EnFazlaKitapYazar" />
+          <FunctionImportMapping FunctionImportName="EnAktifUye" FunctionName="DBKUTUPHANEModel.Store.EnAktifUye" />
+          <FunctionImportMapping FunctionImportName="EnBaşarılıPersonel" FunctionName="DBKUTUPHANEModel.Store.EnBaşarılıPersonel" />
+          <FunctionImportMapping FunctionImportName="EnÇokOkunanKitap" FunctionName="DBKUTUPHANEModel.Store.EnÇokOkunanKitap" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
